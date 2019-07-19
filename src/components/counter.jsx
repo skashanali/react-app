@@ -4,16 +4,27 @@ class Counter extends Component {
     state = {
         count: 0
     };
-    handleIncrement = () => {
+    handleIncrement = prod => {
+        console.log(prod);
         // for reflecting state change on view we use setState method i.e we are setting state again
         this.setState({ count: this.state.count + 1 });
     };
+
+    // one way for passing argument to event other is by direct inline method
+    /* doHandleIncrement = () => {
+        this.handleIncrement({ id: 1 });
+    }; */
 
     render() {
         return (
             <React.Fragment>
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">
+                <button
+                    onClick={() => {
+                        this.handleIncrement({ id: 1 });
+                    }}
+                    className="btn btn-secondary btn-sm"
+                >
                     Increment
                 </button>
             </React.Fragment>
