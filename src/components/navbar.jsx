@@ -2,8 +2,8 @@ import React from "react";
 
 // Stateless Functional Component
 
-// for stateless component we pass props in parameter
 const NavBar = ({ totalCounters }) => {
+    console.log("NavBar - Rendered");
     return (
         <nav className="navbar navbar-light bg-light">
             <a href="#" className="navbar-brand">
